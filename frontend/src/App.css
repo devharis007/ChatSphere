@@ -1,0 +1,367 @@
+/* ---------- Join screen ---------- */
+.join-screen {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at top, #1e293b 0%, #0f172a 60%);
+}
+
+.join-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.join-card h1 {
+  margin: 0 0 4px;
+  font-size: 32px;
+  background: linear-gradient(90deg, var(--accent), #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  color: var(--text-muted);
+  margin: 0 0 28px;
+  font-size: 14px;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.join-form label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+.join-form input,
+.join-form select {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.join-form input:focus,
+.join-form select:focus {
+  border-color: var(--accent);
+}
+
+.room-description {
+  color: var(--text-muted);
+  font-size: 12.5px;
+  margin: 4px 2px 0;
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 13px;
+  margin: 10px 0 0;
+}
+
+.form-warning {
+  color: #f59e0b;
+  font-size: 12.5px;
+  margin: 8px 0 0;
+}
+
+.join-form button {
+  margin-top: 22px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.join-form button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.join-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---------- Chat screen ---------- */
+.chat-screen {
+  height: 100%;
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-pill {
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+.status-pill.status-connected {
+  color: var(--success);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.status-pill.status-connecting,
+.status-pill.status-reconnecting {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.status-pill.status-disconnected {
+  color: var(--danger);
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.leave-button {
+  margin: 16px 0 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.leave-button:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.online-heading {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 16px 0 8px;
+}
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.user-list li.me {
+  color: var(--accent-hover);
+  font-weight: 600;
+}
+
+.user-list li.empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.banner {
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+.banner-error {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.no-messages {
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.system-message {
+  align-self: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  background: var(--bg-elevated);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin: 8px 0;
+}
+
+.message-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-row.own {
+  justify-content: flex-end;
+}
+
+.message-bubble {
+  max-width: 60%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  margin: 3px 0;
+  font-size: 14.5px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message-bubble.other {
+  background: var(--bubble-other);
+  border-bottom-left-radius: 4px;
+}
+
+.message-bubble.own {
+  background: var(--bubble-own);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-hover);
+  margin-bottom: 2px;
+}
+
+.message-time {
+  font-size: 10.5px;
+  opacity: 0.6;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.typing-indicator {
+  height: 24px;
+  padding: 0 24px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.message-form input {
+  flex: 1;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  outline: none;
+}
+
+.message-form input:focus {
+  border-color: var(--accent);
+}
+
+.message-form input:disabled {
+  opacity: 0.6;
+}
+
+.message-form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0 22px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.message-form button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.message-form button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    width: 160px;
+    padding: 14px 10px;
+  }
+
+  .message-bubble {
+    max-width: 80%;
+  }
+}

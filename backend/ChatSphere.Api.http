@@ -1,0 +1,6 @@
+@ChatSphere.Api_HostAddress = http://localhost:5082
+
+GET {{ChatSphere.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
