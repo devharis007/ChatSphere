@@ -28,7 +28,13 @@ ChatSphere is a real-time chat application built to demonstrate professional ASP
 
 ## Screenshots
 
-_Add screenshots of the join screen and chat screen here._
+**Live chat room** — three users connected over SignalR, with the online list and "is typing" indicator updating in real time
+
+![ChatSphere chat room](docs/screenshots/chat.png)
+
+**Joining a room** — rooms and live online counts come from `GET /api/rooms`
+
+![ChatSphere join screen](docs/screenshots/join.png)
 
 ## Project Structure
 
