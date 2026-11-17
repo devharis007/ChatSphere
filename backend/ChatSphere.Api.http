@@ -1,6 +1,8 @@
-@ChatSphere.Api_HostAddress = http://localhost:5082
+@host = http://localhost:5082
 
-GET {{ChatSphere.Api_HostAddress}}/weatherforecast/
+### List rooms with live online counts
+GET {{host}}/api/rooms
 Accept: application/json
 
-###
+# The real-time chat itself runs over the SignalR hub at {{host}}/hubs/chat;
+# use the React frontend (or two browser tabs) to exercise it.
